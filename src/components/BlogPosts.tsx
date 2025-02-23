@@ -1,22 +1,35 @@
 import React from 'react'
+import Link from 'next/link'
 
-function BlogPosts() {
+
+
+function BlogPosts({
+  title = "Default Title",
+  imageURL = "https://via.placeholder.com/150",
+  content = "No content available.",
+  blogURL = "/blog"
+}: BlogPostProps) {
+  console.log("Title:", title);
+  console.log("Image URL:", imageURL);
+  console.log("Content:", content);
+
   return (
-        <div className="BLOG POST card shadow-xl">
-        <figure>
-            <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes" />
-        </figure>
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
+    <div className="BLOG POST card shadow-xl text-black">
+      <figure>
+        <img src={imageURL} alt={title} />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{title}!</h2>
+        <p>{content}</p>
+        <div className="card-actions justify-end">
+          <Link href={blogURL}>
+            <button className="btn btn-primary">Read More...</button>
+          </Link>
         </div>
-        </div>
-  )
+      </div>
+    </div>
+  );
 }
+
 
 export default BlogPosts
