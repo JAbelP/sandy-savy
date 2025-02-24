@@ -1,7 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
-
+interface BlogPostProps
+{
+  title:string,
+  imageURL:string,
+  content:string,
+  blogURL:string
+}
 
 function BlogPosts({
   title = "Default Title",
