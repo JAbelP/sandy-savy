@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
 
 interface BlogPostProps
 {
@@ -22,7 +23,7 @@ function BlogPosts({
   return (
     <div className="BLOG POST card shadow-xl text-black">
       <figure>
-        <img src={imageURL} alt={title} />
+        <Image src={imageURL} alt={title} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{title}!</h2>
